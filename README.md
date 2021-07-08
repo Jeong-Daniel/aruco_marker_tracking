@@ -38,10 +38,10 @@ https://www.devicemart.co.kr/goods/view?no=1361333
 https://www.devicemart.co.kr/goods/view?no=1280279  
 7. 2채널 드라이브 2000원 2개 4천원
 https://www.devicemart.co.kr/goods/view?no=1278835
-8. 9V건전지 단자 230원
+8. 9V건전지 단자 230원 2개 460원
 https://www.devicemart.co.kr/goods/view?no=3117
 
-20만030원
+총합 20만260원
 
 ---
 ### 참고 사이트  
