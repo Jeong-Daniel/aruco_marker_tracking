@@ -26,11 +26,11 @@
 1. 라즈베리파이4 스타터키트 10만3천원  
 https://www.devicemart.co.kr/goods/view?no=12241550  
 (라즈베리파이+mini HDMI케이블+SD 16GB+카드리더기 등등)  
-2. 라즈베리파이 전용 카메라 2만8천원  
+2. 라즈베리파이 전용 카메라 3만3천원  
 https://www.devicemart.co.kr/goods/view?no=1077951&gclid=Cj0KCQjw2tCGBhCLARIsABJGmZ7i5mZwncNXFVOEH_RztBJPgz55A_wxY3wH7FARDyGi2A8m7HvNNDAaAhk8EALw_wcB  
-3. 서보모터 개당 3600원 * 4개 10800
+3. 서보모터 개당 3600원 * 4개 14400
 https://www.devicemart.co.kr/goods/view?no=12503476
-4. DC모터 개당 600원 * 4개 1800원
+4. DC모터 개당 600원 * 4개 2400원
 https://www.devicemart.co.kr/goods/view?no=1287094
 5. GPIO 확장채널 6400원
 https://www.devicemart.co.kr/goods/view?no=1361333
@@ -41,7 +41,7 @@ https://www.devicemart.co.kr/goods/view?no=1278835
 8. 9V건전지 단자 230원 2개 460원
 https://www.devicemart.co.kr/goods/view?no=3117
 
-총합 20만260원
+총합 196,260원
 
 ---
 ### 참고 사이트  
