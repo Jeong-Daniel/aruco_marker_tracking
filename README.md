@@ -41,7 +41,8 @@ https://www.devicemart.co.kr/goods/view?no=1278835
 8. 9V건전지 단자 230원 2개 460원
 https://www.devicemart.co.kr/goods/view?no=3117
 
-총합 196,260원
+총합 196,260원  
+VAT포함 215,886원 
 
 ---
 ### 참고 사이트  
