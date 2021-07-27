@@ -53,3 +53,6 @@ OpenCV 매뉴얼 : https://docs.opencv.org/master/d9/d0c/group__calib3d.html#ga6
 
 혹시 모를 디스코드  
 https://discord.gg/DDeDPqr7
+
+라즈베리파이제어  
+https://syki66.github.io/blog/2020/09/27/servo-motor.html라즈베리파이제어
