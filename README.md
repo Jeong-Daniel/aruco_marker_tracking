@@ -18,10 +18,6 @@
 최종보고서 제출 11.22.(월)  
 최종 발표평가    11.26.(금)  
 
-* 6월말(미정)
-물품구매 리스트 작성후 학과 사무실 제출 -> 학교에서 대리구매후 재전달
-늦어도 7월 초부터는 바로 작업 들어 갈 수 있을것으로 예정  
-
 물품 구매리스트  
 1. 라즈베리파이4 스타터키트 10만3천원  
 https://www.devicemart.co.kr/goods/view?no=12241550  
@@ -40,10 +36,6 @@ https://www.devicemart.co.kr/goods/view?no=1280279
 https://www.devicemart.co.kr/goods/view?no=1278835
 8. 9V건전지 단자 230원 2개 460원
 https://www.devicemart.co.kr/goods/view?no=3117
-
-총합 196,260원  
-VAT포함 215,886원 
-
 ---
 ### 참고 사이트  
 Git 사용방법 : http://www.edwith.org/gitandgithub/joinLectures/42169  
