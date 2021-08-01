@@ -8,7 +8,7 @@ import cv2
 import cv2.aruco as aruco
 import numpy as np
 from math import pi, sqrt, atan2, asin
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #from scipy.spatial.transform import Rotation
 
 # 사용해려는 행렬이 유효한지 확인
