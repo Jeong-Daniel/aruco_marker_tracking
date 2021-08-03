@@ -112,10 +112,11 @@ def eulerAnglesToRotationMatrix(euler):
      return R
 """
 
-#비디오불러오기, 640x480으로 설정
+#비디오불러오기, 1280x720으로 설정
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+cap.set(cv2.CAP_PROP_FPS, 60)
 dictionary = aruco.getPredefinedDictionary(aruco.DICT_6X6_250)
 
 #위에서부터 마커사이즈(단위m),왜곡계수,카메라포즈
@@ -123,8 +124,8 @@ marker_size=0.15
 #distCoeffs=np.array([k1, k2, p1, p2, k3])
 #서피스랩탑4
 distCoeffs=np.array([0.015701, 0.190824, 0.001675, -0.003972, 0])
-K = np.array([[623.798362, 0, 320],
-              [0, 623.798362, 240],
+K = np.array([[623.798362, 0, 640],
+              [0, 623.798362, 360],
               [0, 0, 1]], dtype=np.float32)
 """
 ##레노버
