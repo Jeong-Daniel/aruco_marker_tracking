@@ -23,26 +23,8 @@
 중간보고서 제출 08.25.(수)  
 최종보고서 제출 11.22.(월)  
 최종 발표평가    11.26.(금)  
-
-물품 구매리스트  
-1. 라즈베리파이4 스타터키트 10만3천원  
-https://www.devicemart.co.kr/goods/view?no=12241550  
-(라즈베리파이+mini HDMI케이블+SD 16GB+카드리더기 등등)  
-2. 라즈베리파이 전용 카메라 3만3천원  
-https://www.devicemart.co.kr/goods/view?no=1077951&gclid=Cj0KCQjw2tCGBhCLARIsABJGmZ7i5mZwncNXFVOEH_RztBJPgz55A_wxY3wH7FARDyGi2A8m7HvNNDAaAhk8EALw_wcB  
-3. 서보모터 개당 3600원 * 4개 14400
-https://www.devicemart.co.kr/goods/view?no=12503476
-4. DC모터 개당 600원 * 4개 2400원
-https://www.devicemart.co.kr/goods/view?no=1287094
-5. GPIO 확장채널 6400원
-https://www.devicemart.co.kr/goods/view?no=1361333
-6. DC모터드라이브 3만2천600원
-https://www.devicemart.co.kr/goods/view?no=1280279  
-7. 2채널 드라이브 2000원 2개 4천원
-https://www.devicemart.co.kr/goods/view?no=1278835
-8. 9V건전지 단자 230원 2개 460원
-https://www.devicemart.co.kr/goods/view?no=3117
 ---
+
 ### 참고 사이트  
 Git 사용방법 : http://www.edwith.org/gitandgithub/joinLectures/42169  
 OpenCV 매뉴얼 : https://docs.opencv.org/master/d9/d0c/group__calib3d.html#ga61585db663d9da06b68e70cfbf6a1eac  
