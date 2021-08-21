@@ -11,6 +11,11 @@ from math import pi, sqrt, atan2, asin
 #import matplotlib.pyplot as plt
 #from scipy.spatial.transform import Rotation
 
+#서보모터 각도 제어를 위한 모듈
+import pigpio
+from time import sleep
+pie = pigpio.pi()
+#sudo pigpiod
 # 사용해려는 행렬이 유효한지 확인
 def isRotationMatrix(R) :
     Rt = np.transpose(R)
@@ -31,6 +36,15 @@ def g_v(rvecs):
     temp.tolist()
     temp=[temp[0][0],temp[1][0],temp[2][0]]
     return temp
+
+def convert(angle):
+    angle = round(angle,0)
+    angle += 90
+    if angle < 0:
+        angle =0
+    if angle > 180:
+        angle = 180
+    return 600 + angle*10
 
 #오일러 각도에 대한 회전 행렬 계산
 #오일러 각도에 대해서 x와 z를 교환함
@@ -56,7 +70,7 @@ def rotationMatrixToEulerAngles(R) :
     y=round(y,5)
     z=round(z,5)
     
-    Rstr = ['Pitch:'+str(x),'Yaw: '+str(y),'Roll: '+str(z)]
+    Rstr = [x,y,z]
     return Rstr
 
 def rotationMatrixToEulerAngles_C(R) :
@@ -112,12 +126,11 @@ def eulerAnglesToRotationMatrix(euler):
      return R
 """
 
-#비디오불러오기, 1280x720으로 설정
+#비디오불러오기, 640x480으로 설정
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-cap.set(cv2.CAP_PROP_FPS, 60)
-dictionary = aruco.getPredefinedDictionary(cv2.aruco.DICT_6X6_250)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+dictionary = aruco.getPredefinedDictionary(aruco.DICT_6X6_250)
 
 #위에서부터 마커사이즈(단위m),왜곡계수,카메라포즈
 marker_size=0.15
@@ -130,8 +143,8 @@ K = np.array([[914.426678, 0, 640],
 """
 #서피스랩탑4
 distCoeffs=np.array([0.015701, 0.190824, 0.001675, -0.003972, 0])
-K = np.array([[623.798362, 0, 640],
-              [0, 623.798362, 360],
+K = np.array([[623.798362, 0, 320],
+              [0, 623.798362, 240],
               [0, 0, 1]], dtype=np.float32)
 ##레노버
 distCoeffs=np.array([0.010161, -0.090434, 0.007061, 0.002154, 0])
@@ -139,12 +152,16 @@ K = np.array([[572.434936, 0, 320],
               [0, 572.434936, 240],
               [0, 0, 1]], dtype=np.float32)
 """
-
-
 #출력에 사용할 폰트
 font=cv2.FONT_HERSHEY_SIMPLEX
 trans = []
 angle = []
+
+#17,18,27번의 서보모터를 종료함
+pie.set_servo_pulsewidth(17, 0) 
+pie.set_servo_pulsewidth(18, 0)
+pie.set_servo_pulsewidth(27, 0)
+sleep(0.1)
 
 while True:
     ret, frame = cap.read()
@@ -154,7 +171,7 @@ while True:
     corners, ids, _ = aruco.detectMarkers(gray, dictionary)
     #주어진 파라메타를 통해서 회전벡터와 트랜잭션벡터
     rvecs, tvecs, __ = aruco.estimatePoseSingleMarkers(corners, marker_size, K, distCoeffs)
-    
+      
     #코너가 한개이상 나올때(마커가 감지될때)
     if len(corners) > 0:
         #마커 그리기
@@ -168,20 +185,28 @@ while True:
         R_T = R.T
 
         Rstr_A = rotationMatrixToEulerAngles(R)
-        cv2.putText(frame, Rstr_A[0], (0, 150), font, 1, (0, 255, 0))
-        cv2.putText(frame, Rstr_A[1], (0, 200), font, 1, (255, 0, 0))
-        cv2.putText(frame, Rstr_A[2], (0, 250), font, 1, (0, 0, 255))
+        cv2.putText(frame, 'Pitch:'+str(Rstr_A[0]), (0, 150), font, 1, (0, 255, 0))
+        cv2.putText(frame, 'Yaw: '+str(Rstr_A[1]), (0, 200), font, 1, (255, 0, 0))
+        cv2.putText(frame, 'Roll: '+str(Rstr_A[2]), (0, 250), font, 1, (0, 0, 255))
         angle.append(graph(R))
         
         Rstr_C = rotationMatrixToEulerAngles_C(R_T)
         cv2.putText(frame, Rstr_C[0], (0, 300), font, 1, (0, 255, 0))
         cv2.putText(frame, Rstr_C[1], (0, 350), font, 1, (255, 0, 0))
         cv2.putText(frame, Rstr_C[2], (0, 400), font, 1, (0, 0, 255))
+    
+        #17 Pitch, 18 yaw, 27 roll
+        pie.set_servo_pulsewidth(17, convert(Rstr_A[0]))
+        pie.set_servo_pulsewidth(18, convert(Rstr_A[1]))
+        pie.set_servo_pulsewidth(27, convert(Rstr_A[2]))
+        sleep(0.1)
 
     #영상출력
     cv2.imshow('frame',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+    #서보모터 동작을 위한 텀주기
+    
 cap.release()
 cv2.destroyAllWindows()
 
