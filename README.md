@@ -30,3 +30,6 @@ https://discord.gg/DDeDPqr7
 
 라즈베리파이제어  
 https://syki66.github.io/blog/2020/09/27/servo-motor.html라즈베리파이제어
+
+학술논문참고  
+https://lib.pusan.ac.kr/resource/e-article/?app=eds&page_number=1&mod=list&refine=y&query_string=query-1%3DAND%2CAruco%26sort%3Drelevance%26includefacets%3Dy%26searchmode%3Dall%26autosuggest%3Dn%26autocorrect%3Dn%26view%3Dbrief%26resultsperpage%3D10%26pagenumber%3D1%26highlight%3Dy%26includeimagequickview%3Dn&q_ti&q_au&q_pu
