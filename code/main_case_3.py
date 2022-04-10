@@ -122,16 +122,11 @@ dictionary = aruco.getPredefinedDictionary(cv2.aruco.DICT_6X6_250)
 #위에서부터 마커사이즈(단위m),왜곡계수,카메라포즈
 marker_size=0.15
 #distCoeffs=np.array([k1, k2, p1, p2, k3])
+"""
 #rasberry pi camera
 distCoeffs=np.array([-0.006462, 0.852629,-0.003371,-0.003302, 0])
 K = np.array([[914.426678, 0, 640],
               [0, 914.426678, 360],
-              [0, 0, 1]], dtype=np.float32)
-"""
-#서피스랩탑4
-distCoeffs=np.array([0.015701, 0.190824, 0.001675, -0.003972, 0])
-K = np.array([[623.798362, 0, 640],
-              [0, 623.798362, 360],
               [0, 0, 1]], dtype=np.float32)
 ##레노버
 distCoeffs=np.array([0.010161, -0.090434, 0.007061, 0.002154, 0])
@@ -139,7 +134,11 @@ K = np.array([[572.434936, 0, 320],
               [0, 572.434936, 240],
               [0, 0, 1]], dtype=np.float32)
 """
-
+#서피스랩탑4
+distCoeffs=np.array([0.015701, 0.190824, 0.001675, -0.003972, 0])
+K = np.array([[623.798362, 0, 640],
+              [0, 623.798362, 360],
+              [0, 0, 1]], dtype=np.float32)
 
 #출력에 사용할 폰트
 font=cv2.FONT_HERSHEY_SIMPLEX
