@@ -1,4 +1,4 @@
-# 부산대학교 Aerospace capstone desing
+# 부산대학교 Aerospace Capstone Desing
 # 항공우주종합설계(졸업논문)  
 * 참여자 : 정대현(조장), 박유경(조원) | 지도교수 : 이대우 교수
 ---
